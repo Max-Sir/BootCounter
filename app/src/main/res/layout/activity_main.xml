@@ -2,18 +2,56 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".presentation.MainActivity">
 
+    <!-- TextView to display boot event history -->
     <TextView
+        android:id="@+id/bootEvents"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="No boots detected"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dismissalsAllowed"
+        android:padding="16dp"/>
+
+    <!-- EditText for Total Dismissals Allowed -->
+    <EditText
+        android:id="@+id/dismissalsAllowed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Total Dismissals Allowed"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/bootEvents"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"/>
+
+    <!-- EditText for Interval Between Dismissals -->
+    <EditText
+        android:id="@+id/dismissalInterval"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Interval Between Dismissals (minutes)"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/dismissalsAllowed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"/>
+
+    <!-- Button to apply the configuration -->
+    <Button
+        android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Update Config"
+        app:layout_constraintTop_toBottomOf="@+id/dismissalInterval"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

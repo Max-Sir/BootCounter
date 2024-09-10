@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BootCounter</string>
+    <string name="no_boots_detected">no boots detected</string>
 </resources>
